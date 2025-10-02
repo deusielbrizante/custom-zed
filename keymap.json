@@ -1,0 +1,84 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g s": "outline::Toggle",
+      "g i": "editor::ToggleCodeActions",
+      "g d": "editor::OpenExcerpts",
+      "g c": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false
+        }
+      ]
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "g l": "vim::SelectNext",
+      "g L": "vim::SelectPrevious",
+      "g a": "editor::SelectAllMatches",
+      "g shift-a": "editor::FindAllReferences",
+      "g f": "project_symbols::Toggle",
+      "space p e": "diagnostics::Deploy"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "g e": "editor::Hover",
+      "space b v": "pane::SplitRight",
+      "space b s": "pane::SplitDown",
+      "space b l": "workspace::ActivatePaneRight",
+      "space b h": "workspace::ActivatePaneLeft",
+      "space b k": "workspace::ActivatePaneUp",
+      "space b j": "workspace::ActivatePaneDown",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "space b d": "pane::CloseActiveItem",
+      "space f": "file_finder::Toggle",
+      "ctrl-e": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "EmptyPane",
+    "bindings": {
+      "space f": "file_finder::Toggle",
+      "space f f": "projects::OpenRecent",
+      "ctrl-e": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "g c": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-e": "workspace::ToggleRightDock",
+      "space a": "project_panel::NewFile"
+    }
+  }
+]
